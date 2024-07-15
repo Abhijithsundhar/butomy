@@ -43,6 +43,7 @@ class _CheckOutPageState extends State<CheckOutPage> {
   void clearCart() {
     setState(() {
       productQuantities.clear();
+      widget.dish.clear();
     });
   }
 

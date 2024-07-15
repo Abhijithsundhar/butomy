@@ -39,7 +39,7 @@ class CategoryController {
     //          .doc(data?[index].id).delete();
 
     const snackBar = SnackBar(
-      content: Text('user deleted'),
+      content: Text('Logout successfully'),
     );
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
     // Model= data?[index];

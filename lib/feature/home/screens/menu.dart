@@ -4,9 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:techbutomy/core/common/common.dart';
 import 'package:techbutomy/feature/home/homecontrollor/homecontrollor.dart';
+import 'package:techbutomy/feature/home/screens/homescreen.dart';
 import 'package:techbutomy/model/categoryModel.dart';
 
-List<Product> dishList = [];
+// List<Product> dishList = [];
 
 class Menu extends ConsumerStatefulWidget {
   @override
@@ -21,9 +22,10 @@ class _MenuState extends ConsumerState<Menu> {
   void initState() {
     super.initState();
     timer = Timer.periodic(Duration(minutes: 15), (timer) {
-      dishList.clear();
+      // dishList.clear();
     });
   }
+
 
   @override
   void dispose() {
@@ -51,7 +53,8 @@ class _MenuState extends ConsumerState<Menu> {
           return Scaffold(
             backgroundColor: Colors.grey.shade300,
             body: Padding(
-              padding: EdgeInsets.only(top: height * .02, left: width * .015),
+              padding:
+              EdgeInsets.only(top: height * .02, left: width * .015),
               child: Column(
                 children: [
                   Row(children: [
@@ -67,11 +70,14 @@ class _MenuState extends ConsumerState<Menu> {
                       ),
                       child: Padding(
                         padding: EdgeInsets.only(left: width * .02),
-                        child: Icon(Icons.circle, color: Colors.green.shade600, size: width * .04),
+                        child: Icon(Icons.circle,
+                            color: Colors.green.shade600,
+                            size: width * .04),
                       ),
                     ),
                     SizedBox(width: width * .01),
-                    Text('Non Veg', style: TextStyle(fontSize: width * .035)),
+                    Text('Non Veg',
+                        style: TextStyle(fontSize: width * .035)),
                     SizedBox(width: width * .01),
                     Container(
                       height: height * .025,
@@ -82,7 +88,9 @@ class _MenuState extends ConsumerState<Menu> {
                       ),
                       child: Padding(
                         padding: EdgeInsets.only(left: width * .02),
-                        child: Icon(Icons.circle, color: Colors.green.shade600, size: width * .04),
+                        child: Icon(Icons.circle,
+                            color: Colors.green.shade600,
+                            size: width * .04),
                       ),
                     ),
                     SizedBox(width: width * .01),
@@ -172,7 +180,8 @@ class _MenuState extends ConsumerState<Menu> {
                                     children: [
                                       Padding(
                                         padding: EdgeInsets.only(
-                                            left: width * .05, top: height * .05),
+                                            left: width * .05,
+                                            top: height * .05),
                                         child: Column(
                                           crossAxisAlignment:
                                           CrossAxisAlignment.start,
@@ -182,33 +191,49 @@ class _MenuState extends ConsumerState<Menu> {
                                               width: width * .2,
                                               decoration: BoxDecoration(
                                                 color: Colors.red,
-                                                borderRadius: BorderRadius.only(
-                                                  topLeft: Radius.circular(12),
-                                                  bottomRight: Radius.circular(12),
+                                                borderRadius:
+                                                BorderRadius.only(
+                                                  topLeft:
+                                                  Radius.circular(12),
+                                                  bottomRight:
+                                                  Radius.circular(12),
                                                 ),
                                               ),
                                               child: Row(
                                                 children: [
-                                                  SizedBox(width: width * .03),
-                                                  Text(dish.discount.toString(),
+                                                  SizedBox(
+                                                      width: width * .03),
+                                                  Text(
+                                                      dish.discount
+                                                          .toString(),
                                                       style: TextStyle(
-                                                          fontSize: width * .035,
+                                                          fontSize:
+                                                          width * .035,
                                                           fontWeight:
-                                                          FontWeight.bold,
-                                                          color: Colors.white)),
+                                                          FontWeight
+                                                              .bold,
+                                                          color: Colors
+                                                              .white)),
                                                   Text('%',
                                                       style: TextStyle(
                                                           fontWeight:
-                                                          FontWeight.bold,
-                                                          fontSize: width * .035,
-                                                          color: Colors.white)),
-                                                  SizedBox(width: width * .005),
+                                                          FontWeight
+                                                              .bold,
+                                                          fontSize:
+                                                          width * .035,
+                                                          color: Colors
+                                                              .white)),
+                                                  SizedBox(
+                                                      width: width * .005),
                                                   Text('OFF',
                                                       style: TextStyle(
-                                                          fontSize: width * .035,
+                                                          fontSize:
+                                                          width * .035,
                                                           fontWeight:
-                                                          FontWeight.bold,
-                                                          color: Colors.white)),
+                                                          FontWeight
+                                                              .bold,
+                                                          color: Colors
+                                                              .white)),
                                                 ],
                                               ),
                                             ),
@@ -220,21 +245,26 @@ class _MenuState extends ConsumerState<Menu> {
                                                   width: width * .05,
                                                   decoration: BoxDecoration(
                                                     border: Border.all(
-                                                        color: Colors.red.shade600),
+                                                        color: Colors
+                                                            .red.shade600),
                                                   ),
                                                   child: Icon(Icons.circle,
-                                                      color: Colors.red.shade600,
+                                                      color: Colors
+                                                          .red.shade600,
                                                       size: width * .025),
                                                 ),
-                                                SizedBox(width: width * .01),
+                                                SizedBox(
+                                                    width: width * .01),
                                                 SizedBox(
                                                   width: width * .3,
                                                   child: Text(
                                                     dish.name,
                                                     style: TextStyle(
-                                                        fontSize: width * .04,
+                                                        fontSize:
+                                                        width * .04,
                                                         fontWeight:
-                                                        FontWeight.bold),
+                                                        FontWeight
+                                                            .bold),
                                                   ),
                                                 )
                                               ],
@@ -249,12 +279,15 @@ class _MenuState extends ConsumerState<Menu> {
                                                   '₹${dish.mrp.toString()}',
                                                   style: TextStyle(
                                                     fontSize: width * .04,
-                                                    fontWeight: FontWeight.bold,
-                                                    decoration: TextDecoration
+                                                    fontWeight:
+                                                    FontWeight.bold,
+                                                    decoration:
+                                                    TextDecoration
                                                         .lineThrough,
                                                   ),
                                                 ),
-                                                SizedBox(width: width * .03),
+                                                SizedBox(
+                                                    width: width * .03),
                                                 Text(
                                                   '₹${dish.price.toStringAsFixed(0)}',
                                                   style: TextStyle(
@@ -293,34 +326,72 @@ class _MenuState extends ConsumerState<Menu> {
                                             decoration: BoxDecoration(
                                                 color: Colors.teal.shade300,
                                                 borderRadius:
-                                                BorderRadius.circular(10)),
+                                                BorderRadius.circular(
+                                                    10)),
                                             child: Row(
                                               children: [
                                                 IconButton(
                                                   onPressed: () {
-                                                    setState(() {
+                                                    if (dish.count > 0) {
                                                       dish.count--;
-                                                      if (dish.count == 0) {
-                                                        /// Remove the dish from the list when count is zero
-                                                        dishList.remove(dish);
-                                                      }
-                                                    });
+                                                      print("object");
+                                                      /// Remove the dish from the list when count is zero
+                                                      // dishList.remove(dish);
+                                                      final resultDish =
+                                                      ref.watch(
+                                                          dishListsProvider);
+                                                      resultDish
+                                                          .remove(dish);
+                                                      ref
+                                                          .read(
+                                                          dishListsProvider
+                                                              .notifier)
+                                                          .update((state) =>
+                                                      resultDish);
+                                                      ref.read
+                                                        (refBoool.notifier).update((state) => !state);
+                                                      setState(() {
+
+                                                      });
+                                                    }
                                                   },
                                                   icon: Icon(Icons.remove),
                                                 ),
-                                                Text(dish.count.toString()),
+                                                Consumer(builder:
+                                                    (context, ref3, child) {
+                                                  // ref3.watch(refBoool);
+                                                  // print(ref3.watch(intCount));
+                                                  return Text(dish.count
+                                                      .toString());
+                                                }),
                                                 IconButton(
                                                   onPressed: () {
-                                                    setState(() {
+                                                    if (dish.count >= 0) {
+                                                      print("object");
                                                       dish.count++;
-                                                      if (dish.count > 0) {
-                                                        /// Add the dish to list
-                                                        dishList.add(dish);
-                                                        print('dishList.length');
-                                                        print(dishList.length);
-                                                        print(dishList.first);
-                                                      }
-                                                    });
+
+
+                                                      /// Add the dish to list
+                                                      // dishList.add(dish);
+                                                      // print('dishList.length');
+                                                      // print(dishList.length);
+                                                      // print(dishList.first);
+                                                      final resultDish =
+                                                      ref.watch(
+                                                          dishListsProvider);
+                                                      resultDish.add(dish);
+                                                      ref
+                                                          .read(
+                                                          dishListsProvider
+                                                              .notifier)
+                                                          .update((state) =>
+                                                      resultDish);
+                                                      ref.read
+                                                        (refBoool.notifier).update((state) => !state);
+                                                      setState(() {
+
+                                                      });
+                                                    }
                                                   },
                                                   icon: Icon(Icons.add),
                                                 ),
@@ -334,9 +405,9 @@ class _MenuState extends ConsumerState<Menu> {
                                 );
                               },
                             ),
-                            category1.product.length == 6?
-                            SizedBox(height: height * .185):
-                            SizedBox(height: height * .38)
+                            category1.product.length == 6
+                                ? SizedBox(height: height * .185)
+                                : SizedBox(height: height * .38)
                           ],
                         );
                       },

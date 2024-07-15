@@ -40,7 +40,7 @@ class AuthRepository {
 
       if (userCredential.additionalUserInfo!.isNewUser) {
         final userModel = UserModel(
-          name: userCredential.user!.displayName ?? 'No Name',
+          name: userCredential.user!.displayName ?? '',
           profilePic: userCredential.user!.photoURL ?? '',
           uid: userCredential.user!.uid,
           phoneNumber: userCredential.user!.phoneNumber??'',
